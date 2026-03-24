@@ -8,6 +8,21 @@ Catchy SwiftBar plugin to switch **Git + SSH identity** from your macOS menu bar
 - ✅ Updates SSH identity per host in a **managed block** in `~/.ssh/config`
 - ✅ Optional CLI wizard to add profiles quickly
 
+## Table of contents
+
+- [What it changes](#what-it-changes)
+- [Requirements](#requirements)
+- [Install](#install)
+- [How it looks](#how-it-looks)
+- [Menu actions explained](#menu-actions-explained)
+- [Configure profiles](#configure-profiles)
+  - [Remove a profile](#remove-a-profile)
+- [Profile format](#profile-format)
+  - [Limits](#limits)
+- [Notes & safety](#notes--safety)
+- [Development](#development)
+- [License](#license)
+
 ---
 
 ## What it changes
