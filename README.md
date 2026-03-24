@@ -57,6 +57,54 @@ Then in SwiftBar:
 
 ---
 
+## How it looks
+
+![Git Persona Bar menu preview](docs/images/swiftbar-menu.png)
+
+---
+
+## Menu actions explained
+
+These are the plugin actions you see in the dropdown:
+
+- **Switch to <Profile>**
+  - Applies the selected profile (`git config --global user.name/email`)
+  - Updates managed `Host` block in `~/.ssh/config`
+  - Reloads SSH key in agent (`ssh-add -D` + `ssh-add <key>`)
+
+- **Open Config File**
+  - Opens `~/.config/git-persona-bar/profiles.json` in your default editor
+
+- **Add Profile (wizard)**
+  - Opens a Terminal window/session intentionally
+  - Asks a short interactive set of questions:
+    - profile id
+    - label
+    - icon
+    - git `user.name`
+    - git `user.email`
+    - SSH host (default: `github.com`)
+    - SSH key path (e.g. `~/.ssh/id_ed25519_work`)
+  - Writes the profile into `~/.config/git-persona-bar/profiles.json`
+  - Optionally asks if you want to open the config file
+  - **Safety**: no `sudo`, no key contents read/uploaded, no network calls
+
+- **Install / Relink Plugin**
+  - Opens Terminal and creates/refreshes a symlink from SwiftBar plugin directory to this repo script
+  - Ensures script is executable
+  - Useful after moving repo folders
+
+- **Validate Config**
+  - Opens Terminal and validates JSON structure and limits (max 5 profiles)
+  - Prints clear errors if config is invalid
+
+- **Refresh**
+  - Tells SwiftBar to rerun the plugin immediately
+
+> Note: menu items like **Run in Terminal…**, **Disable Plugin**, **About** are SwiftBar built-in actions, not provided by this plugin.
+
+---
+
 ## Configure profiles
 
 Config file:
@@ -140,6 +188,7 @@ Validate config after changes:
 - Use key paths only (e.g. `~/.ssh/id_ed25519_work`).
 - Plugin creates timestamped backup copies of `~/.ssh/config` before updates.
 - Existing `Host github.com` blocks can remain; the managed block is written at top so selected identity wins.
+- You may see a one-time macOS notification permission prompt when profile switch notifications are shown.
 - If config becomes invalid, plugin shows a warning icon and gives quick actions.
 
 ---
