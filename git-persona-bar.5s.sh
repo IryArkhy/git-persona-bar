@@ -6,6 +6,16 @@
 # <swiftbar.desc>Switch Git + SSH personas from your macOS menu bar</swiftbar.desc>
 # <swiftbar.dependencies>bash,python3,git,ssh-add</swiftbar.dependencies>
 
+# xbar metadata (for directory indexing compatibility)
+# <xbar.title>Git Persona Bar</xbar.title>
+# <xbar.version>v1.0.0</xbar.version>
+# <xbar.author>Iryna Arkhypchenko</xbar.author>
+# <xbar.author.github>IryArkhy</xbar.author.github>
+# <xbar.desc>Switch up to 5 Git + SSH personas from your macOS menu bar.</xbar.desc>
+# <xbar.image>https://raw.githubusercontent.com/IryArkhy/git-persona-bar/main/docs/images/swiftbar-menu.png</xbar.image>
+# <xbar.dependencies>bash,python3,git,ssh-add</xbar.dependencies>
+# <xbar.abouturl>https://github.com/IryArkhy/git-persona-bar</xbar.abouturl>
+
 set -u
 
 MAX_PROFILES=5
