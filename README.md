@@ -16,7 +16,7 @@ When you switch profile, the plugin updates:
 
 1. `git config --global user.name`
 2. `git config --global user.email`
-3. A managed block in `~/.ssh/config` for the configured host:
+3. A managed block in `~/.ssh/config` for the configured host (placed at the **top** for priority):
 
 ```ssh
 # >>> git-persona-bar:github.com >>>
@@ -115,6 +115,7 @@ Or use the wizard:
 - Do **not** commit private SSH keys.
 - Use key paths only (e.g. `~/.ssh/id_ed25519_work`).
 - Plugin creates timestamped backup copies of `~/.ssh/config` before updates.
+- Existing `Host github.com` blocks can remain; the managed block is written at top so selected identity wins.
 - If config becomes invalid, plugin shows a warning icon and gives quick actions.
 
 ---

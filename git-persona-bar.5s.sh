@@ -260,13 +260,19 @@ managed_block = [
     end,
 ]
 
+# Remove old managed block (if any), then always place the managed block at the top
+# so identity-related settings take precedence over later Host entries.
 if s_idx is not None and e_idx is not None:
-    new_lines = lines[:s_idx] + managed_block + lines[e_idx+1:]
+    clean_lines = lines[:s_idx] + lines[e_idx+1:]
 else:
-    new_lines = lines[:]
-    if new_lines and new_lines[-1].strip() != '':
-        new_lines.append('')
-    new_lines += managed_block
+    clean_lines = lines[:]
+
+while clean_lines and clean_lines[0].strip() == '':
+    clean_lines.pop(0)
+
+new_lines = managed_block[:]
+if clean_lines:
+    new_lines += [''] + clean_lines
 
 config_path.write_text('\n'.join(new_lines) + '\n', encoding='utf-8')
 PY
