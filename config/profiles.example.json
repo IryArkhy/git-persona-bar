@@ -1,0 +1,30 @@
+{
+  "profiles": [
+    {
+      "id": "work",
+      "label": "Work",
+      "icon": "💼",
+      "git": {
+        "name": "Your Name",
+        "email": "you@company.com"
+      },
+      "ssh": {
+        "host": "github.com",
+        "identity_file": "~/.ssh/id_rsa_work"
+      }
+    },
+    {
+      "id": "personal",
+      "label": "Personal",
+      "icon": "🌱",
+      "git": {
+        "name": "Your Name",
+        "email": "you@gmail.com"
+      },
+      "ssh": {
+        "host": "github.com",
+        "identity_file": "~/.ssh/id_ed25519_personal"
+      }
+    }
+  ]
+}
