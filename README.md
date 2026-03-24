@@ -66,7 +66,9 @@ cd git-persona-bar
 ./scripts/install.sh
 ```
 
-Then in SwiftBar:
+`install.sh` also sets plugin visibility in SwiftBar preferences and restarts SwiftBar (if running) so the icon appears immediately.
+
+Then in SwiftBar (if needed):
 
 - Refresh plugins, or restart SwiftBar.
 

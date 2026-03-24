@@ -27,10 +27,31 @@ fi
 
 ln -s "$PLUGIN_SOURCE" "$PLUGIN_TARGET"
 
+# Make sure plugin is visible in menu bar (helps on systems where new status items
+# can end up hidden by default in Control Center preferences).
+defaults write com.ameba.SwiftBar "NSStatusItem VisibleCC git-persona-bar.5s.sh" -bool true >/dev/null 2>&1 || true
+
 echo "Installed plugin symlink:"
 echo "  $PLUGIN_TARGET -> $PLUGIN_SOURCE"
+
+echo "Set SwiftBar visibility flag for git-persona-bar.5s.sh"
+
+# Soft restart SwiftBar to apply visibility + plugin scan immediately.
+if pgrep -x "SwiftBar" >/dev/null 2>&1; then
+  osascript -e 'tell application "SwiftBar" to quit' >/dev/null 2>&1 || true
+  sleep 1
+  open -a SwiftBar >/dev/null 2>&1 || true
+  echo "Restarted SwiftBar"
+fi
+
 echo
+if [ -f "$SWIFTBAR_DIR/git-profile.5s.sh" ]; then
+  echo "Note: legacy plugin detected at $SWIFTBAR_DIR/git-profile.5s.sh"
+  echo "You may see two similar menu icons until you remove/disable the old plugin."
+  echo
+fi
+
 echo "Next steps:"
-echo "1) Open SwiftBar and refresh plugins"
-echo "2) Configure profiles in ~/.config/git-persona-bar/profiles.json"
-echo "3) Optional wizard: $REPO_ROOT/scripts/add-profile.sh"
+echo "1) Configure profiles in ~/.config/git-persona-bar/profiles.json"
+echo "2) Optional wizard: $REPO_ROOT/scripts/add-profile.sh"
+echo "3) If icon is still not visible, open SwiftBar and click Refresh All"
