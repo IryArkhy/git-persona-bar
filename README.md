@@ -79,6 +79,30 @@ Or use the wizard:
 ~/Pet/git-persona-bar/scripts/add-profile.sh
 ```
 
+### Remove a profile
+
+1. Open config:
+
+```bash
+open ~/.config/git-persona-bar/profiles.json
+```
+
+2. Remove the profile object from the `profiles` array.
+3. Save the file.
+4. Refresh SwiftBar.
+
+If the removed profile was active, reset plugin state:
+
+```bash
+rm -f ~/.config/git-persona-bar/state.json
+```
+
+Validate config after changes:
+
+```bash
+~/Pet/git-persona-bar/git-persona-bar.5s.sh validate
+```
+
 ---
 
 ## Profile format
