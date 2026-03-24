@@ -61,8 +61,8 @@ It also runs:
 ## Install
 
 ```bash
-git clone https://github.com/IryArkhy/git-persona-bar.git ~/Pet/git-persona-bar
-cd ~/Pet/git-persona-bar
+git clone https://github.com/IryArkhy/git-persona-bar.git
+cd git-persona-bar
 ./scripts/install.sh
 ```
 
@@ -128,18 +128,20 @@ Config file:
 ~/.config/git-persona-bar/profiles.json
 ```
 
+> Run the following commands from the cloned `git-persona-bar` repository root.
+
 Create/edit it manually from template:
 
 ```bash
 mkdir -p ~/.config/git-persona-bar
-cp ~/Pet/git-persona-bar/config/profiles.example.json ~/.config/git-persona-bar/profiles.json
+cp ./config/profiles.example.json ~/.config/git-persona-bar/profiles.json
 open ~/.config/git-persona-bar/profiles.json
 ```
 
 Or use the wizard:
 
 ```bash
-~/Pet/git-persona-bar/scripts/add-profile.sh
+./scripts/add-profile.sh
 ```
 
 ### Remove a profile
@@ -163,7 +165,7 @@ rm -f ~/.config/git-persona-bar/state.json
 Validate config after changes:
 
 ```bash
-~/Pet/git-persona-bar/git-persona-bar.5s.sh validate
+./git-persona-bar.5s.sh validate
 ```
 
 ---
