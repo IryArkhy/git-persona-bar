@@ -48,7 +48,6 @@ It also runs:
 - `ssh-add -D` (clear current loaded keys)
 - `ssh-add <selected-key>`
 
----
 
 ## Requirements
 
@@ -56,7 +55,6 @@ It also runs:
 - [SwiftBar](https://swiftbar.app/)
 - `bash`, `python3`, `git`, `ssh-add`
 
----
 
 ## Install
 
@@ -72,13 +70,11 @@ Then in SwiftBar (if needed):
 
 - Refresh plugins, or restart SwiftBar.
 
----
 
 ## How it looks
 
 ![Git Persona Bar menu preview](docs/images/swiftbar-menu.png)
 
----
 
 ## Menu actions explained
 
@@ -120,7 +116,6 @@ These are the plugin actions you see in the dropdown:
 
 > Note: menu items like **Run in Terminal…**, **Disable Plugin**, **About** are SwiftBar built-in actions, not provided by this plugin.
 
----
 
 ## Configure profiles
 
@@ -170,7 +165,6 @@ Validate config after changes:
 ./git-persona-bar.5s.sh validate
 ```
 
----
 
 ## Profile format
 
@@ -199,7 +193,6 @@ Validate config after changes:
 - Max profiles: **5**
 - Profile IDs must be unique and use: `a-z A-Z 0-9 _ -`
 
----
 
 ## Notes & safety
 
@@ -210,7 +203,6 @@ Validate config after changes:
 - You may see a one-time macOS notification permission prompt when profile switch notifications are shown.
 - If config becomes invalid, plugin shows a warning icon and gives quick actions.
 
----
 
 ## Development
 
@@ -226,7 +218,6 @@ Validate config:
 bash ./git-persona-bar.5s.sh validate
 ```
 
----
 
 ## License
 
